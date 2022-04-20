@@ -44,7 +44,11 @@ public class RegisterActivity extends AppCompatActivity {
                 Toast.makeText(RegisterActivity.this, "Enter credentials", Toast.LENGTH_SHORT).show();
             }else if (email_pass.length() < 6){
                 Toast.makeText(RegisterActivity.this, "Password too short", Toast.LENGTH_SHORT).show();
-            }else{
+            }else if(email_user.contains("{") || email_user.contains("}")){
+                Toast.makeText(RegisterActivity.this, "no special characters like ().{}", Toast.LENGTH_SHORT).show();
+            }else if(email_user.contains("(") || email_user.contains(")") || email_user.contains(".")){
+                Toast.makeText(RegisterActivity.this, "no special characters like ().{}", Toast.LENGTH_SHORT).show();
+            } else{
                 registerUser(email_user, email_pass);
             }
         });
