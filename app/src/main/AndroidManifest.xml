@@ -13,6 +13,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Movieapp">
         <activity
+            android:name=".VideoFullScreen"
+            android:screenOrientation="landscape"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".UserProfileActivity"
             android:exported="false" />
         <activity

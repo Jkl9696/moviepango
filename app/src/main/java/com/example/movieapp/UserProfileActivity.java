@@ -13,7 +13,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class UserProfileActivity extends AppCompatActivity {
 
-    Button logout;
+    Button logout, portfolio;
     TextView userID;
 
     @Override
@@ -21,6 +21,7 @@ public class UserProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_profile);
         logout = findViewById(R.id.btn_logout);
+        portfolio = findViewById(R.id.portfolio_page);
         userID = findViewById(R.id.useremailp);
 
         FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
@@ -41,5 +42,16 @@ public class UserProfileActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        portfolio.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(UserProfileActivity.this, MainActivity.class);
+                startActivity(intent);
+
+            }
+
+        });
+
     }
 }
